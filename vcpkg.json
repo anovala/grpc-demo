@@ -1,0 +1,9 @@
+{
+  "name": "grpc-demo",
+  "version-string": "1.0",
+
+  "dependencies": [
+    "grpc",
+    "protobuf"
+  ]
+}

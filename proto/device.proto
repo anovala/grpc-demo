@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package device;
+
+// 服务定义
+service DeviceService {
+
+    rpc GetDevice(DeviceRequest)
+        returns(DeviceInfo);
+
+    rpc SetPower(PowerRequest)
+        returns(PowerResponse);
+}
+
+
+// 请求设备信息
+message DeviceRequest {
+    string device_id = 1;
+}
+
+message DeviceInfo {
+
+    string device_id = 1;
+    string name = 2;
+    enum Status {
+        UNKNOWN = 0;
+        STOPPED = 1;
+        RUNNING = 2;
+    }
+
+    Status status = 3;
+    double temperature = 4;
+}
+
+
+// 控制命令
+
+message PowerRequest {
+    string device_id = 1;
+    bool enable = 2;
+}
+
+
+message PowerResponse {
+    bool success = 1;
+    string message = 2;
+}
