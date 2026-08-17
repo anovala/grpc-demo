@@ -30,8 +30,7 @@ DeviceServiceImpl::GetDevice( grpc::ServerContext*, const device::DeviceRequest*
 grpc::Status
 DeviceServiceImpl::SetPower( grpc::ServerContext*, const device::PowerRequest* request,device::PowerResponse* response)
 {
-    response->set_success(true);
-
+    response->set_success(request->enable());
     std::string powerModeStr = request->enable() ? "Power ON":"Power OFF";
 
     response->set_message(powerModeStr);

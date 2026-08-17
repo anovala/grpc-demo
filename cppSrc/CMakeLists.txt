@@ -47,7 +47,7 @@ add_custom_command(
 
 add_executable(
     server
-    main.cpp
+    server.cpp
     DeviceServiceImpl.cpp
     ${PROTO_SRCS}
     ${GRPC_SRCS}

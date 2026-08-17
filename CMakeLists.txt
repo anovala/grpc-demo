@@ -81,10 +81,10 @@ add_custom_target(
         ${PYTHON_OUT_DIR}/device_pb2_grpc.py
 )
 
-add_subdirectory(server)
+add_subdirectory(cppSrc)
 
 #安装 python脚本
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/client
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/pythonScript
     DESTINATION script/
 )
 
