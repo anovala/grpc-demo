@@ -1,1 +1,8 @@
 build/
+
+# 先忽略 pythonScript 下的所有文件
+pythonScript/*
+
+# 再例外允许（! 表示不忽略）手写的文件
+!pythonScript/client.py
+!pythonScript/server.py
