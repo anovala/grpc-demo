@@ -1,6 +1,7 @@
 #pragma once
 
 #include "device.grpc.pb.h"
+#include <fmt/core.h>
 
 class DeviceServiceImpl final
     :

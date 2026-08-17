@@ -8,7 +8,7 @@ find_package(Protobuf CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
-
+find_package(fmt REQUIRED REQUIRED)
 
 #获取python脚本执行目录
 execute_process(

@@ -57,6 +57,7 @@ target_link_libraries(
     server
     gRPC::grpc++
     protobuf::libprotobuf
+    fmt::fmt
 )
 
 target_include_directories(
@@ -67,7 +68,7 @@ target_include_directories(
 
 add_executable(client client.cpp ${PROTO_SRCS} ${GRPC_SRCS})
 
-target_link_libraries(client  gRPC::grpc++ protobuf::libprotobuf)
+target_link_libraries(client  gRPC::grpc++ protobuf::libprotobuf fmt::fmt)
 target_include_directories(client PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
 

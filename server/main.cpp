@@ -7,7 +7,6 @@ int main()
 {
 
     DeviceServiceImpl service;
-
     grpc::ServerBuilder builder;
 
     builder.AddListeningPort(

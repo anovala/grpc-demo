@@ -1,6 +1,7 @@
 #include "DeviceServiceImpl.h"
 
 
+/*获取设备信息*/
 grpc::Status
 DeviceServiceImpl::GetDevice( grpc::ServerContext*, const device::DeviceRequest* request ,device::DeviceInfo* response)
 {
@@ -20,6 +21,8 @@ DeviceServiceImpl::GetDevice( grpc::ServerContext*, const device::DeviceRequest*
         device::DeviceInfo::RUNNING
     );
 
+    fmt::print("set device id to {} , temperature to 36.5, status to Running\n",request->device_id());
+
     return grpc::Status::OK;
 }
 
@@ -29,9 +32,10 @@ DeviceServiceImpl::SetPower( grpc::ServerContext*, const device::PowerRequest* r
 {
     response->set_success(true);
 
-    response->set_message(
-        request->enable() ? "Power ON":"Power OFF"
-    );
+    std::string powerModeStr = request->enable() ? "Power ON":"Power OFF";
+
+    response->set_message(powerModeStr);
+    fmt::print("Set device {}!\n", powerModeStr);
 
     return grpc::Status::OK;
 }
