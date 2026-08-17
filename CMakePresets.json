@@ -31,7 +31,10 @@
             "inherits": "base",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++"
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_TOOLCHAIN_FILE": "/home/sola/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET": "x64-linux",
+                "CMAKE_INSTALL_PREFIX": "${env:HOME}/installTemp/myNetSrc/"
             }
         }
     ],
@@ -46,6 +49,18 @@
             "name": "windows-release",
             "displayName": "Windows Release",
             "configurePreset": "windows",
+            "configuration": "Release"
+        },
+        {
+            "name": "linux-debug",
+            "displayName": "Linux Debug",
+            "configurePreset": "linux",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-release",
+            "displayName": "Linux Release",
+            "configurePreset": "linux",
             "configuration": "Release"
         }
     ],

@@ -43,7 +43,7 @@ set(PROTO_FILE
 )
 
 set(PYTHON_OUT_DIR
-    ${CMAKE_SOURCE_DIR}/client
+    ${CMAKE_SOURCE_DIR}/pythonScript
 )
 
 
